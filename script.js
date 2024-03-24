@@ -1,14 +1,22 @@
 function handleClick(buttonId) {
-    // 예시 이미지 URL, 실제 사용할 이미지 URL로 변경해야 함
-    var imageUrl = "path/to/your/image-for-button-" + buttonId + ".jpg";
+    // 버튼 ID에 따른 이미지 파일 매핑
+    var images = {
+        1: "인스타.jpg",
+        2: "메시지.png",
+        3: "메시지함.jpg",
+        4: "인스타게시글.jpg"
+    };
+    
+    var imageUrl = images[buttonId]; // 버튼 ID에 해당하는 이미지 URL
     var screenImage = document.querySelector('.screen-image');
     
-    // 이미지 URL 변경
-    screenImage.src = imageUrl;
-
+    screenImage.src = imageUrl; // 이미지 소스 변경
+    
     // 확대 애니메이션 추가
     screenImage.classList.add('zoom-effect');
     
-    // 애니메이션이 끝난 후에 추가적인 동작을 구현하고 싶다면 여기에 코드를 추가
-    // 예: setTimeout(function() { /* 다음 동작 */ }, 500); // 0.5초 후에 실행
+    // 애니메이션 리셋을 위한 코드
+    setTimeout(function() {
+        screenImage.classList.remove('zoom-effect');
+    }, 500); // 0.5초 후 확대 효과 제거
 }
