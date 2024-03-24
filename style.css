@@ -1,0 +1,44 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-screen {
+    position: relative;
+    width: 1170px; /* 화면 크기 */
+    height: 2532px;
+}
+
+.screen-image {
+    width: 100%;
+    height: auto; /* 이미지가 화면 크기에 맞게 조정됨 */
+}
+
+.btn {
+    position: absolute;
+    width: 100px; /* 버튼 크기 */
+    height: 100px;
+    background: transparent; /* 투명 배경 */
+    border: none; /* 테두리 없음 */
+    cursor: pointer; /* 마우스 오버 시 포인터 모양 변경 */
+}
+/* 확대 애니메이션을 위한 키프레임 */
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(5); /* 최종 확대 배율 */
+    }
+}
+
+.zoom-effect {
+    animation: zoomIn 0.5s forwards; /* 애니메이션 지속 시간과 애니메이션이 끝난 상태를 유지 */
+}
+
+/* 여기에 추가 CSS 스타일을 정의하세요. */
