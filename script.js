@@ -1,7 +1,7 @@
 function handleClick(buttonId) {
     var images = {
         1: "인스타.jpg",
-        2: "메시지.png",
+        2: "메시지.jpg",
         3: "메시지함.jpg",
         4: "인스타게시글.jpg"
     };
