@@ -1,3 +1,9 @@
+document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function() {
+        handleClick(this.getAttribute('data-id'));
+    });
+});
+
 function handleClick(buttonId) {
     var images = {
         1: "인스타.jpg",
@@ -5,15 +11,15 @@ function handleClick(buttonId) {
         3: "메시지함.jpg",
         4: "인스타게시글.jpg"
     };
-    
+
     var imageUrl = images[buttonId]; // 버튼 ID에 해당하는 이미지 URL
     var screenImage = document.querySelector('.screen-image');
-    
+
     screenImage.src = imageUrl; // 이미지 소스 변경
-    
+
     // 이전 확대 애니메이션 효과 제거
     screenImage.classList.remove('zoom-effect');
-    
+
     // 브라우저가 이전 변경 사항을 무시하지 않도록 함
     setTimeout(() => {
         // 확대 애니메이션 추가
@@ -23,7 +29,7 @@ function handleClick(buttonId) {
     // "뒤로 가기" 및 "새 이미지" 버튼 숨기기
     document.getElementById('backButton').classList.add('hidden');
     document.getElementById('newImageButton').classList.add('hidden');
-    
+
     // 첫 번째 화면의 버튼들 다시 보이기
     document.querySelectorAll('.btn').forEach(button => button.classList.remove('hidden'));
 }
