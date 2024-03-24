@@ -8,22 +8,24 @@ function handleClick(buttonId) {
     
     var imageUrl = images[buttonId]; // 버튼 ID에 해당하는 이미지 URL
     var screenImage = document.querySelector('.screen-image');
-    var backButton = document.getElementById('backButton');
-    var newImageButton = document.getElementById('newImageButton');
     
-    // 첫 번째 화면의 버튼들 숨기기
-    document.querySelectorAll('.btn').forEach(button => button.classList.add('hidden'));
+    screenImage.src = imageUrl; // 이미지 소스 변경
     
-    // 이미지와 버튼 상태 업데이트
-    screenImage.src = imageUrl;
-    backButton.classList.remove('hidden');
-    newImageButton.classList.remove('hidden');
-
-    // 이전 확대 애니메이션 효과 제거 후 재적용
+    // 이전 확대 애니메이션 효과 제거
     screenImage.classList.remove('zoom-effect');
+    
+    // 브라우저가 이전 변경 사항을 무시하지 않도록 함
     setTimeout(() => {
+        // 확대 애니메이션 추가
         screenImage.classList.add('zoom-effect');
     }, 10); // 딜레이 후 애니메이션 추가
+
+    // "뒤로 가기" 및 "새 이미지" 버튼 숨기기
+    document.getElementById('backButton').classList.add('hidden');
+    document.getElementById('newImageButton').classList.add('hidden');
+    
+    // 첫 번째 화면의 버튼들 다시 보이기
+    document.querySelectorAll('.btn').forEach(button => button.classList.remove('hidden'));
 }
 
 // 뒤로 가는 버튼 기능
@@ -36,7 +38,8 @@ document.getElementById('backButton').onclick = function() {
     // 첫 번째 화면의 버튼들 다시 보이기
     document.querySelectorAll('.btn').forEach(button => button.classList.remove('hidden'));
 
-    // 애니메이션 효과를 여기서 제거하거나 추가하지 않음
+    // 확대 애니메이션 효과 제거
+    screenImage.classList.remove('zoom-effect');
 };
 
 // 새로운 이미지를 여는 버튼 기능
