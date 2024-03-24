@@ -44,8 +44,14 @@ function handleClick(buttonId) {
         newImageButton.classList.add('hidden');
         
         // 첫 번째 화면의 버튼들 다시 보이기
-        firstScreenButtons.forEach(button => button.classList.remove('hidden'));
-    };
+    firstScreenButtons.forEach(button => button.classList.remove('hidden'));
+
+    // 확대 애니메이션 효과 재적용
+    screenImage.classList.remove('zoom-effect');
+    setTimeout(() => {
+        screenImage.classList.add('zoom-effect');
+    }, 0);
+};
 
     // 새로운 이미지를 여는 버튼 기능 (설정 필요)
     newImageButton.onclick = function() {
