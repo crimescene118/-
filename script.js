@@ -21,3 +21,35 @@ function handleClick(buttonId) {
         screenImage.classList.add('zoom-effect');
     }, 0);
 }
+function handleClick(buttonId) {
+    var imageUrl = "사랑해.jpg"; // '사랑해.jpg' 이미지 경로
+    var screenImage = document.querySelector('.screen-image');
+    var firstScreenButtons = document.querySelectorAll('.btn');
+    var backButton = document.getElementById('backButton');
+    var newImageButton = document.getElementById('newImageButton');
+
+    // 첫 번째 화면의 버튼들 숨기기
+    firstScreenButtons.forEach(button => button.classList.add('hidden'));
+
+    // 새 이미지로 변경 및 새로운 버튼 보이기
+    screenImage.src = imageUrl;
+    backButton.classList.remove('hidden');
+    newImageButton.classList.remove('hidden');
+
+    // 뒤로 가는 버튼 기능
+    backButton.onclick = function() {
+        // 초기 화면 이미지 URL로 변경 필요
+        screenImage.src = '최초의이미지.jpg'; // 첫 화면의 이미지로 변경
+        backButton.classList.add('hidden');
+        newImageButton.classList.add('hidden');
+        
+        // 첫 번째 화면의 버튼들 다시 보이기
+        firstScreenButtons.forEach(button => button.classList.remove('hidden'));
+    };
+
+    // 새로운 이미지를 여는 버튼 기능 (설정 필요)
+    newImageButton.onclick = function() {
+        // 새로운 이미지 로드 또는 다른 기능 실행
+        // 예: screenImage.src = '다른이미지.jpg';
+    };
+}
