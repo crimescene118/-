@@ -46,4 +46,30 @@ body, html {
 .zoom-effect {
     animation: zoom-in 0.5s ease forwards; /* 애니메이션 적용 */
 }
+
+.button {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#backButton {
+    top: 165px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+}
+
+#newImageButton {
+    top: 1515px;
+    left: 27px;
+    width: 100px;
+    height: 100px;
+}
+
 /* 여기에 추가 CSS 스타일을 정의하세요. */
