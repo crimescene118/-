@@ -22,7 +22,7 @@ function handleClick(buttonId) {
     }, 0);
 }
 function handleClick(buttonId) {
-    var imageUrl = "사랑해.jpg"; // '사랑해.jpg' 이미지 경로
+    var imageUrl = "인스타.jpg"; // '인스타.jpg' 이미지 경로
     var screenImage = document.querySelector('.screen-image');
     var firstScreenButtons = document.querySelectorAll('.btn');
     var backButton = document.getElementById('backButton');
