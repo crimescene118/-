@@ -12,11 +12,12 @@ function handleClick(buttonId) {
     
     screenImage.src = imageUrl; // 이미지 소스 변경
     
-    // 확대 애니메이션 추가
-    screenImage.classList.add('zoom-effect');
+    // 이전 확대 애니메이션 효과 제거
+    screenImage.classList.remove('zoom-effect');
     
-    // 애니메이션 리셋을 위한 코드
-    setTimeout(function() {
-        screenImage.classList.remove('zoom-effect');
-    }, 500); // 0.5초 후 확대 효과 제거
+    // 브라우저가 이전 변경 사항을 무시하지 않도록 함
+    setTimeout(() => {
+        // 확대 애니메이션 추가
+        screenImage.classList.add('zoom-effect');
+    }, 0);
 }
