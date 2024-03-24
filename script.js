@@ -49,7 +49,7 @@ function handleClick(buttonId) {
 
     // 새로운 이미지를 여는 버튼 기능 (설정 필요)
     newImageButton.onclick = function() {
-        screenImage.src = '인스타게시글.PNG'; // 첫 화면의 이미지로 변경
+        screenImage.src = '인스타게시글.jpg'; // 첫 화면의 이미지로 변경
         backButton.classList.add('hidden');
         newImageButton.classList.add('hidden');
     };
