@@ -39,7 +39,7 @@ function handleClick(buttonId) {
     // 뒤로 가는 버튼 기능
     backButton.onclick = function() {
         // 초기 화면 이미지 URL로 변경 필요
-        screenImage.src = '최초의이미지.jpg'; // 첫 화면의 이미지로 변경
+        screenImage.src = '최아들배경.PNG'; // 첫 화면의 이미지로 변경
         backButton.classList.add('hidden');
         newImageButton.classList.add('hidden');
         
@@ -49,7 +49,8 @@ function handleClick(buttonId) {
 
     // 새로운 이미지를 여는 버튼 기능 (설정 필요)
     newImageButton.onclick = function() {
-        // 새로운 이미지 로드 또는 다른 기능 실행
-        // 예: screenImage.src = '다른이미지.jpg';
+        screenImage.src = '인스타게시글.PNG'; // 첫 화면의 이미지로 변경
+        backButton.classList.add('hidden');
+        newImageButton.classList.add('hidden');
     };
 }
