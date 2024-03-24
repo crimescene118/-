@@ -36,22 +36,24 @@ function handleClick(buttonId) {
     backButton.classList.remove('hidden');
     newImageButton.classList.remove('hidden');
 
-    // 뒤로 가는 버튼 기능
-    backButton.onclick = function() {
-        // 초기 화면 이미지 URL로 변경 필요
-        screenImage.src = '최아들배경.PNG'; // 첫 화면의 이미지로 변경
-        backButton.classList.add('hidden');
-        newImageButton.classList.add('hidden');
-        
-        // 첫 번째 화면의 버튼들 다시 보이기
+   // 뒤로 가는 버튼 기능
+backButton.onclick = function() {
+    // 초기 화면 이미지 URL로 변경 필요
+    screenImage.src = '최아들배경.PNG'; // 첫 화면의 이미지로 변경
+    backButton.classList.add('hidden');
+    newImageButton.classList.add('hidden');
+    
+    // 첫 번째 화면의 버튼들 다시 보이기
     firstScreenButtons.forEach(button => button.classList.remove('hidden'));
 
     // 확대 애니메이션 효과 재적용
     screenImage.classList.remove('zoom-effect');
+    // 약간의 딜레이를 추가하여 애니메이션 재시작을 보장
     setTimeout(() => {
         screenImage.classList.add('zoom-effect');
-    }, 0);
+    }, 10); // 0에서 10ms로 변경
 };
+
 
     // 새로운 이미지를 여는 버튼 기능 (설정 필요)
     newImageButton.onclick = function() {
