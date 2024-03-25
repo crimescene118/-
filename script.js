@@ -10,28 +10,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-   function changeImage(imageName, button) {
-    const imgElement = document.getElementById('current-image');
-    const rect = button.getBoundingClientRect(); // 버튼의 위치와 크기 정보
+    function changeImage(imageName) {
+        const imgElement = document.getElementById('current-image');
+        imgElement.style.transition = 'transform 0.5s ease';
+        imgElement.style.transform = 'scale(0.5)';
 
-    // 이미지 시작 위치와 크기를 버튼에 맞춤
-    imgElement.style.position = 'absolute';
-    imgElement.style.left = `${rect.left}px`;
-    imgElement.style.top = `${rect.top}px`;
-    imgElement.style.width = `${rect.width}px`;
-    imgElement.style.height = `${rect.height}px`;
+        setTimeout(() => {
+            history.push(imgElement.src);
+            imgElement.src = imageName;
+            imgElement.style.transform = 'scale(1)';
+            addBackButton();
+        }, 500);
+    }
 
-    setTimeout(() => {
-        history.push(imgElement.src);
-        imgElement.src = imageName;
-        // 원래 크기와 위치로 애니메이션
-        imgElement.style.transition = 'all 0.5s ease';
-        imgElement.style.left = '0px'; // 이미지의 원래 위치
-        imgElement.style.top = '0px'; // 이미지의 원래 위치
-        imgElement.style.width = '100%'; // 이미지의 원래 너비
-        imgElement.style.height = 'auto'; // 이미지의 원래 높이
-    }, 500);
-}
     function addBackButton() {
         let backButton = document.getElementById('back-button');
         if (!backButton) {
