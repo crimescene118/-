@@ -33,7 +33,18 @@
   .button3 { top: 85%; left: 11%; width: 8%; height: 4%; }
   .button4 { top: 90%; left: 34%; width: 8%; height: 4%; }
 
-  /* 미디어 쿼리를 사용하여 다양한 화면 크기에 대응 */
+  .backButton {
+    position: absolute;
+    width: calc(50 / 1170 * 100%);
+    height: calc(50 / 2532 * 100%);
+    top: calc(165 / 2532 * 100%);
+    left: calc(25 / 1170 * 100%);
+    background-color: transparent; 
+    border: none; 
+    cursor: pointer;
+    display: none; /* Initially hidden */
+  }
+
   @media (max-width: 768px) {
     .background {
       padding-bottom: 216.6%;
@@ -42,17 +53,36 @@
       width: 15%; /* 모바일에서는 버튼 크기 조정 */
       height: 7.5%;
     }
+    .backButton {
+      width: calc(50 / 768 * 100%);
+      height: calc(50 / 768 * 100%);
+    }
   }
 </style>
 </head>
 <body>
 
-<div class="background">
+<div class="background" id="background">
   <button class="button button1" onclick="window.open('https://crimescene118.github.io/choiinsta/', '_blank')"></button>
   <button class="button button2" onclick="window.open('https://crimescene118.github.io/choikakao/', '_blank')"></button>
-  <button class="button button3" onclick="window.open('URL3', '_blank')"></button>
+  <button class="button button3" onclick="showImage()"></button>
   <button class="button button4" onclick="window.open('URL4', '_blank')"></button>
+  <button class="backButton" id="backButton" onclick="goBack()"></button>
 </div>
+
+<script>
+let previousImage = '최아들배경.PNG'; // Initial background image
+
+function showImage() {
+  document.getElementById('background').style.backgroundImage = "url('최아들전화.png')";
+  document.getElementById('backButton').style.display = 'block'; // Show back button
+}
+
+function goBack() {
+  document.getElementById('background').style.backgroundImage = "url('" + previousImage + "')";
+  document.getElementById('backButton').style.display = 'none'; // Hide back button
+}
+</script>
 
 </body>
 </html>
