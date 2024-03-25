@@ -1,31 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>첫 번째 화면</title>
-<link rel="stylesheet" href="style.css"> <!-- CSS 파일 연결 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 호스팅 페이지</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="first-screen">
-    <!-- 첫 번째 화면 이미지 -->
-    <img src="최아들배경.PNG" alt="첫 번째 화면" class="screen-image">
-    
-    <!-- 버튼들 (투명하고, 클릭 시 지정된 기능을 수행하도록 설정) -->
-    <button class="btn" style="top: 265px; left: 131px;" onclick="handleClick(1)" data-id="1">인스타</button>
-    <button class="btn" style="top: 265px; left: 399px;" onclick="handleClick(2)" data-id="2">메시지</button>
-    <button class="btn" style="top: 2298px; left: 399px;" onclick="handleClick(3)" data-id="3">메시지함</button>
-    <button class="btn" style="top: 2298px; left: 131px;" onclick="handleClick(4)" data-id="4">인스타게시글</button>
-    
-    <!-- 뒤로 가는 버튼 -->
-    <button id="backButton" class="hidden button">뒤로</button>
-
-    <!-- 새로운 이미지를 여는 버튼 -->
-    <button id="newImageButton" class="hidden button">새 이미지</button>
-
-</div>
-
-<script src="script.js"></script> <!-- 자바스크립트 파일 연결 -->
+    <img id="current-image" src="초기화면.jpg" alt="초기 화면" style="width:1170px; height:2532px;">
+    <div id="button-container">
+        <button class="image-btn" data-image="이미지1.jpg" style="top: 265px; left: 131px;"></button>
+        <button class="image-btn" data-image="이미지2.jpg" style="top: 265px; left: 399px;"></button>
+        <button class="image-btn" data-image="이미지3.jpg" style="top: 2298px; left: 131px;"></button>
+        <button class="image-btn" data-image="이미지4.jpg" style="top: 2298px; left: 399px;"></button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
