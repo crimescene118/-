@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>최아들배경</title>
+<title>Adaptive Buttons on Background</title>
 <style>
   body, html {
     margin: 0;
@@ -14,31 +14,33 @@
   .background {
     position: relative;
     width: 100%;
-    height: 100%;
-    background-image: url('최아들배경.PNG'); /* 배경 이미지 경로 */
+    height: 0;
+    padding-bottom: 216.6%; /* 이미지의 높이/너비 비율에 맞춤, 예: 2532/1170 */
+    background-image: url('your-image-path.jpg'); /* 배경 이미지 경로 */
     background-size: cover;
     background-position: center;
   }
   .button {
     position: absolute;
-    width: 8.5%; /* 버튼 너비 비율 기반으로 조정 */
-    height: 3.95%; /* 버튼 높이 비율 기반으로 조정 */
     background-color: transparent; /* 투명한 배경 */
     border: none; /* 테두리 없음 */
     cursor: pointer;
   }
 
-  /* 버튼 위치 비율 기반으로 조정 */
-  .button1 { top: 5.17%; left: 22.65%; }
-  .button2 { top: 15.75%; left: 22.65%; }
-  .button3 { top: 90.55%; left: 22.65%; }
-  .button4 { top: 90.75%; left: 34.02%; }
+  /* 버튼 위치와 크기 조정 (원래 이미지 대비 비율로 계산) */
+  .button1 { top: 5%; left: 11%; width: 8%; height: 4%; }
+  .button2 { top: 15%; left: 34%; width: 8%; height: 4%; }
+  .button3 { top: 85%; left: 11%; width: 8%; height: 4%; }
+  .button4 { top: 90%; left: 34%; width: 8%; height: 4%; }
 
   /* 미디어 쿼리를 사용하여 다양한 화면 크기에 대응 */
   @media (max-width: 768px) {
+    .background {
+      padding-bottom: 216.6%;
+    }
     .button {
       width: 15%; /* 모바일에서는 버튼 크기 조정 */
-      height: 7.9%;
+      height: 7.5%;
     }
   }
 </style>
