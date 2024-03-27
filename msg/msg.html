@@ -29,18 +29,18 @@
     opacity: 0; /* 완전 투명 */
   }
   .button {
-    width: calc(1170 / 1170 * 100%);
-    height: calc(200 / 2532 * 100%);
+    width: calc(1080 / 1080 * 100%);
+    height: calc(200 / 2640 * 100%);
   }
-  .button1 { top: calc(432 / 2532 * 100%); left: 0%; }
-  .button2 { top: calc(648 / 2532 * 100%); left: 0%; }
+  .button1 { top: calc(465 / 2640 * 100%); left: 0%; }
+  .button2 { top: calc(655 / 2640 * 100%); left: 0%; }
+  .button3 { top: calc(865 / 2640 * 100%); left: 0%; }
 
   .backButton {
-    width: calc(50 / 1170 * 100%);
-    height: calc(50 / 2532 * 100%);
-    top: calc(165 / 2532 * 100%);
-    left: calc(25 / 1170 * 100%);
-    display: none; /* Initially hide back buttons */
+    width: calc(300 / 1080 * 100%);
+    height: calc(78 / 2640 * 100%);
+    top: calc(2538 / 2640 * 100%);
+    left: calc(726 / 1080 * 100%);
   }
   .goToIndexButton {
   position: absolute;
@@ -48,38 +48,59 @@
   color: transparent;
   border: none;
   cursor: pointer;
-  width: calc(50 / 1170 * 100%);
-  height: calc(50 / 2532 * 100%);
-  top: calc(86 / 2532 * 100%);
-  left: calc(25 / 1170 * 100%);
+  width: calc(300 / 1080 * 100%);
+  height: calc(58 / 2640 * 100%);
+  top: calc(2538 / 2640 * 100%);
+  left: calc(390 / 1080 * 100%);
+}
+  .goToIndexNewButton {
+  position: absolute;
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  width: calc(300 / 1080 * 100%);
+  height: calc(58 / 2640 * 100%);
+  top: calc(2538 / 2640 * 100%);
+  left: calc(726 / 1080 * 100%);
 }
   
   @media (max-width: 768px) {
   .background {
-    padding-bottom: 216.6%; /* 모바일에서도 배경 이미지 비율 유지 */
+    padding-bottom: 244.4%; /* 모바일에서도 배경 이미지 비율 유지 */
   }
   .button {
     /* 모바일 화면에서 버튼 크기 비율 조정. 비율 유지를 위해 높이와 너비를 동일 비율로 조정 */
-    width: calc(1170 / 1170 * 100%);
-    height: calc(200 / 2532 * 100%);
+    width: calc(1080 / 1080 * 100%);
+    height: calc(200 / 2640 * 100%);
   }
   .button1, .button2 {
     /* 모바일에서 버튼 위치 조정. 가로 위치는 변경 없이, 세로 위치만 비율에 맞게 조정 */
     left: 0%; /* 가로 위치 변경 없음 */
   }
-  .button1 { top: calc(432 / 2532 * 100%); }
-  .button2 { top: calc(648 / 2532 * 100%); }
+  .button1 { top: calc(465 / 2640 * 100%); }
+  .button2 { top: calc(665 / 2640 * 100%); }
+  .button3 { top: calc(865 / 2640 * 100%); }
 }
     .backButton {
-      width: calc(50 / 768 * 100%);
-      height: calc(50 / 768 * 100%);
+      width: calc(300 / 1080 * 100%);
+      height: calc(78 / 2640 * 100%);
+      top: calc(2538 / 2640 * 100%);
+      left: calc(726 / 1080 * 100%);
     }
   .goToIndexButton {
-    width: calc(50 / 1170 * 100%);
-    height: calc(50 / 2532 * 100%);
-    top: calc(86 / 2532 * 100%);
-    left: calc(25 / 1170 * 100%);
+    width: calc(300 / 1080 * 100%);
+    height: calc(78 / 2640 * 100%);
+    top: calc(2538 / 2640 * 100%);
+    left: calc(390 / 1080 * 100%);
   }
+   .goToIndexNewButton {
+   width: calc(300 / 1080 * 100%);
+  height: calc(58 / 2640 * 100%);
+  top: calc(2538 / 2640 * 100%);
+  left: calc(726 / 1080 * 100%);
+   }
   
   @keyframes fadeInAnimation {
     from { opacity: 0; }
@@ -90,30 +111,42 @@
 <body>
 
 <div class="background" id="background">
-  <button class="button button1" onclick="changeImage('최아들문자2.png')"></button>
-  <button class="button button2" onclick="changeImage('최아들문자.png')"></button>
+  <button class="button button1" onclick="changeImage('진손님문자1.png')"></button>
+  <button class="button button2" onclick="changeImage('진손님문자2.png')"></button>
+  <button class="button button3" onclick="changeImage('진손님문자3.png')"></button>
   <button class="backButton" id="backButton" onclick="goBack()"></button>
   <button class="goToIndexButton" onclick="goToIndex()">←</button>
+  <button class="goToIndexNewButton" onclick="goToIndex()">홈으로</button>
 </div>
 
 <script>
-let previousImage = '최아들문자함.png'; // Initial background image
+let previousImage = '진손님문자함.png'; // Initial background image
 
 function changeImage(newImage) {
   document.getElementById('background').style.backgroundImage = "url('" + newImage + "')";
   document.getElementById('backButton').style.display = 'block'; // Show back button
-  document.querySelector('.goToIndexButton').style.display = 'none'; // index.html로 돌아가는 버튼 숨김
+  document.querySelector('.button1').style.display = 'none';
+  document.querySelector('.button2').style.display = 'none';
+  document.querySelector('.button3').style.display = 'none';
+  document.querySelector('.goToIndexNewButton').style.display = 'none';
 }
 
 function goBack() {
   console.log("goBack 함수 호출됨"); // 디버깅 메시지 출력
   document.getElementById('background').style.backgroundImage = "url('" + previousImage + "')";
   document.getElementById('backButton').style.display = 'none'; // Hide back button
-  document.querySelector('.goToIndexButton').style.display = 'block'; // index.html로 돌아가는 버튼 다시 표시
+  document.querySelector('.button1').style.display = 'block';
+  document.querySelector('.button2').style.display = 'block';
+  document.querySelector('.button3').style.display = 'block';
+  document.querySelector('.goToIndexNewButton').style.display = 'block';
 }
 
 function goToIndex() {
-  window.location.href = '../phone.html'; // 상위 폴더로 이동
+  window.location.href = '../index.html'; // 상위 폴더로 이동
+}  
+
+function .goToIndexNewButton() {
+  window.location.href = '../index.html'; // 상위 폴더로 이동
 }  
 </script>
 
