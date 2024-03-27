@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>진손님메시지</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    animation: fadeInAnimation 1s ease-out forwards;
+  }
+  .background {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 244.4%; /* 이미지의 높이/너비 비율에 맞춤 */
+    background-image: url('진손님문자함.png'); /* 초기 배경 이미지 경로 */
+    background-size: cover;
+    background-position: center;
+  }
+  .button, .backButton {
+    position: absolute;
+    background-color: transparent; /* 투명한 배경 */
+    border: none; /* 테두리 없음 */
+    cursor: pointer;
+    opacity: 0; /* 완전 투명 */
+  }
+  .button {
+    width: calc(1170 / 1170 * 100%);
+    height: calc(200 / 2532 * 100%);
+  }
+  .button1 { top: calc(432 / 2532 * 100%); left: 0%; }
+  .button2 { top: calc(648 / 2532 * 100%); left: 0%; }
 
+  .backButton {
+    width: calc(50 / 1170 * 100%);
+    height: calc(50 / 2532 * 100%);
+    top: calc(165 / 2532 * 100%);
+    left: calc(25 / 1170 * 100%);
+    display: none; /* Initially hide back buttons */
+  }
+  .goToIndexButton {
+  position: absolute;
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  cursor: pointer;
+  width: calc(50 / 1170 * 100%);
+  height: calc(50 / 2532 * 100%);
+  top: calc(86 / 2532 * 100%);
+  left: calc(25 / 1170 * 100%);
+}
+  
+  @media (max-width: 768px) {
+  .background {
+    padding-bottom: 216.6%; /* 모바일에서도 배경 이미지 비율 유지 */
+  }
+  .button {
+    /* 모바일 화면에서 버튼 크기 비율 조정. 비율 유지를 위해 높이와 너비를 동일 비율로 조정 */
+    width: calc(1170 / 1170 * 100%);
+    height: calc(200 / 2532 * 100%);
+  }
+  .button1, .button2 {
+    /* 모바일에서 버튼 위치 조정. 가로 위치는 변경 없이, 세로 위치만 비율에 맞게 조정 */
+    left: 0%; /* 가로 위치 변경 없음 */
+  }
+  .button1 { top: calc(432 / 2532 * 100%); }
+  .button2 { top: calc(648 / 2532 * 100%); }
+}
+    .backButton {
+      width: calc(50 / 768 * 100%);
+      height: calc(50 / 768 * 100%);
+    }
+  .goToIndexButton {
+    width: calc(50 / 1170 * 100%);
+    height: calc(50 / 2532 * 100%);
+    top: calc(86 / 2532 * 100%);
+    left: calc(25 / 1170 * 100%);
+  }
+  
+  @keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="background" id="background">
+  <button class="button button1" onclick="changeImage('최아들문자2.png')"></button>
+  <button class="button button2" onclick="changeImage('최아들문자.png')"></button>
+  <button class="backButton" id="backButton" onclick="goBack()"></button>
+  <button class="goToIndexButton" onclick="goToIndex()">←</button>
+</div>
+
+<script>
+let previousImage = '최아들문자함.png'; // Initial background image
+
+function changeImage(newImage) {
+  document.getElementById('background').style.backgroundImage = "url('" + newImage + "')";
+  document.getElementById('backButton').style.display = 'block'; // Show back button
+  document.querySelector('.goToIndexButton').style.display = 'none'; // index.html로 돌아가는 버튼 숨김
+}
+
+function goBack() {
+  console.log("goBack 함수 호출됨"); // 디버깅 메시지 출력
+  document.getElementById('background').style.backgroundImage = "url('" + previousImage + "')";
+  document.getElementById('backButton').style.display = 'none'; // Hide back button
+  document.querySelector('.goToIndexButton').style.display = 'block'; // index.html로 돌아가는 버튼 다시 표시
+}
+
+function goToIndex() {
+  window.location.href = '../phone.html'; // 상위 폴더로 이동
+}  
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
