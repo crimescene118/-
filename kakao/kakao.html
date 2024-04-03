@@ -126,6 +126,9 @@ let previousImage = '진손님카톡함.png'; // Initial background image
 function changeImage(newImage, buttonId) {
   document.getElementById('background').style.backgroundImage = "url('" + newImage + "')";
   document.getElementById('backButton').style.display = 'block'; // Show back button
+  document.querySelector('.button1').style.display = 'none';
+  document.querySelector('.button2').style.display = 'none';
+  document.querySelector('.button3').style.display = 'none';
   document.querySelector('.goToIndexNewButton').style.display = 'none'; // index.html로 돌아가는 버튼 숨김
  
   // 모든 버튼의 배경색을 초기화합니다.
@@ -145,6 +148,9 @@ function goBack() {
   console.log("goBack 함수 호출됨"); // 디버깅 메시지 출력
   document.getElementById('background').style.backgroundImage = "url('" + previousImage + "')";
   document.getElementById('backButton').style.display = 'none'; // Hide back button
+  document.querySelector('.button1').style.display = 'block';
+  document.querySelector('.button2').style.display = 'block';
+  document.querySelector('.button3').style.display = 'block';
   document.querySelector('.goToIndexNewButton').style.display = 'block'; // index.html로 돌아가는 버튼 다시 표시
   // 배경색을 초기화합니다.
   const buttons = document.querySelectorAll('.button');
