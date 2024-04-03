@@ -64,18 +64,7 @@
     cursor: pointer;
     display: none; /* Initially hidden */
   }
-    .backNewButton {
-    position: absolute;
-    width: calc(300 / 1080 * 100%);
-    height: calc(78 / 2640 * 100%);
-    top: calc(2538 / 2640 * 100%);
-    left: calc(390 / 1080 * 100%);
-    background-color: transparent; 
-    border: none; 
-    cursor: pointer;
-    display: none; /* Initially hidden */
-  }
-
+   
   @media (max-width: 768px) {
     .background {
       padding-bottom: 244.4%;
@@ -113,6 +102,7 @@
   <button class="button button4" onclick="showAnotherImage()"></button>
   <button class="button button5" onclick="window.open('msg/msg.html', '_self')"></button>
   <button class="backButton" id="backButton" onclick="goBack()"></button>
+  
 </div>
 
 <script>
@@ -123,7 +113,6 @@ function showImage() {
   background.style.backgroundImage = "url('진손님카카오맵.png')";
   background.classList.add('fadeIn'); // 애니메이션 클래스 추가
   document.getElementById('backButton').style.display = 'block';
-  document.getElementById('backNewButton').style.display = 'block';// 뒤로가기 버튼 표시
   document.querySelector('.button1').style.display = 'none';
   document.querySelector('.button2').style.display = 'none';
   document.querySelector('.button3').style.display = 'none';
@@ -136,7 +125,6 @@ function showAnotherImage() {
   background.style.backgroundImage = "url('진손님전화.jpg')";
   background.classList.add('fadeIn'); // 애니메이션 클래스 추가
   document.getElementById('backButton').style.display = 'block'; // 뒤로가기 버튼 표시
-  document.getElementById('backNewButton').style.display = 'block';
   document.querySelector('.button1').style.display = 'none';
   document.querySelector('.button2').style.display = 'none';
   document.querySelector('.button3').style.display = 'none';
@@ -149,7 +137,6 @@ function goBack() {
   background.style.backgroundImage = "url('" + previousImage + "')";
   background.classList.remove('fadeIn'); // 애니메이션 클래스 제거
   document.getElementById('backButton').style.display = 'none'; // 뒤로가기 버튼 숨김
-  document.getElementById('backNewButton').style.display = 'none';
   document.querySelector('.button1').style.display = 'block';
   document.querySelector('.button2').style.display = 'block';
   document.querySelector('.button3').style.display = 'block';
